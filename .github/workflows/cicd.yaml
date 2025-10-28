@@ -36,13 +36,13 @@ jobs:
       - name: Run unit tests
         run: pytest -v
 
-      - name: Install Trivy
+      - name: Install and run Trivy
         run: |
           sudo apt-get update -y
           sudo apt-get install -y wget
           wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh
           chmod +x install.sh
           ./install.sh
-
-      - name: Run Trivy file system scan
-        run: trivy fs .
+          sudo mv trivy /usr/local/bin/
+          trivy --version
+          trivy fs .
