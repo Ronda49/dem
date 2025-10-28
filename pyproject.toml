@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-app"
+version = "0.1.0"
+description = "Simple FastAPI app with CI/CD pipeline"
+authors = [{ name = "Sudharshan" }]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "httpx",
+]
+
